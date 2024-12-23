@@ -9,12 +9,13 @@ CREATE SEQUENCE user_login_profiles_seq
 -- 2. Kreiranje tablice USER_LOGIN_PROFILES:
 CREATE TABLE USER_LOGIN_PROFILES (
     	ID                NUMERIC(5,0) PRIMARY KEY DEFAULT nextval('user_login_profiles_seq'), -- Primarni ključ s automatskom sekvencom
-	PROFILE_NAME      VARCHAR(255) NOT NULL, 		--Polje za ime profila (maksimalno 255 znakova)
+	PROFILE_NAME      VARCHAR(10) NOT NULL, 		--Polje za ime profila (maksimalno 10 znakova)
     	PROFILE_NUMBER    NUMERIC(5,0) NOT NULL UNIQUE, 	--Jedinstveni broj profila, obavezno polje
 	PROFILE_INITIALS  VARCHAR(3)   NOT NULL UNIQUE, 	--Jedinstveni inicijali profila
 	CREATED_BY        VARCHAR(3)   NOT NULL, 		--Korisnik koji je kreirao profil
 	CREATION_DATE     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  --Datum kreiranja
-	CONSTRAINT id_max_check CHECK (ID <= 500) -- Ograničenje na maksimalan broj ID-a
+	CONSTRAINT id_max_check CHECK (ID <= 500), 		-- Ograničenje na maksimalan broj ID-a
+	CONSTRAINT profile_name_min_length CHECK (LENGTH(PROFILE_NAME) >= 5)
 );
 
 -- 3. Provjera rezultata:
@@ -89,7 +90,7 @@ COMMENT ON TABLE USER_LOGIN_PROFILES IS 'Tablica za pohranu podataka o korisnič
 
 --9. Komentari na polja tablice:
 COMMENT ON COLUMN USER_LOGIN_PROFILES.ID IS 'Sekvenca: user_login_profiles_seq';
-COMMENT ON COLUMN USER_LOGIN_PROFILES.PROFILE_NAME IS 'Naziv korisničkog profila (maksimalno 255 znakova)';
+COMMENT ON COLUMN USER_LOGIN_PROFILES.PROFILE_NAME IS 'Naziv korisničkog profila (maksimalno 10 znakova)';
 COMMENT ON COLUMN USER_LOGIN_PROFILES.PROFILE_NUMBER IS 'Jedinstveni broj profila, obavezno polje';
 COMMENT ON COLUMN USER_LOGIN_PROFILES.PROFILE_INITIALS IS 'Jedinstveni inicijali korisnika';
 COMMENT ON COLUMN USER_LOGIN_PROFILES.CREATED_BY IS 'Korisnik koji je kreirao profil';
