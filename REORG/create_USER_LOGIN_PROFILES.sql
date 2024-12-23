@@ -8,11 +8,11 @@ CREATE SEQUENCE user_login_profiles_seq
 
 -- 2. Kreiranje tablice USER_LOGIN_PROFILES:
 CREATE TABLE USER_LOGIN_PROFILES (
-    ID                NUMERIC(5,0) PRIMARY KEY DEFAULT nextval('user_login_profiles_seq'), -- Primarni ključ s automatskom sekvencom
-	PROFILE_NAME      VARCHAR(255) NOT NULL, 				--Polje za ime profila (maksimalno 255 znakova)
-    PROFILE_NUMBER    NUMERIC(5,0) NOT NULL UNIQUE, 		--Jedinstveni broj profila, obavezno polje
-	PROFILE_INITIALS  VARCHAR(3)  NOT NULL UNIQUE, 		    --Jedinstveni inicijali profila
-	CREATED_BY        VARCHAR(3)  NOT NULL, 		 		--Korisnik koji je kreirao profil
+    	ID                NUMERIC(5,0) PRIMARY KEY DEFAULT nextval('user_login_profiles_seq'), -- Primarni ključ s automatskom sekvencom
+	PROFILE_NAME      VARCHAR(255) NOT NULL, 		--Polje za ime profila (maksimalno 255 znakova)
+    	PROFILE_NUMBER    NUMERIC(5,0) NOT NULL UNIQUE, 	--Jedinstveni broj profila, obavezno polje
+	PROFILE_INITIALS  VARCHAR(3)   NOT NULL UNIQUE, 	--Jedinstveni inicijali profila
+	CREATED_BY        VARCHAR(3)   NOT NULL, 		--Korisnik koji je kreirao profil
 	CREATION_DATE     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  --Datum kreiranja
 	CONSTRAINT id_max_check CHECK (ID <= 500) -- Ograničenje na maksimalan broj ID-a
 );
@@ -42,13 +42,13 @@ BEGIN
     LOOP
         -- Generiraj inicijale spajanjem nasumična dva slova iz naziva profila + nasumična znamenka:
         generirani_inicijali := 
-			UPPER(SUBSTRING(NEW.PROFILE_NAME FROM CAST(FLOOR(RANDOM() * LENGTH(NEW.PROFILE_NAME) + 1) AS INTEGER) FOR 1)) || 
+		UPPER(SUBSTRING(NEW.PROFILE_NAME FROM CAST(FLOOR(RANDOM() * LENGTH(NEW.PROFILE_NAME) + 1) AS INTEGER) FOR 1)) || 
 	    	UPPER(SUBSTRING(NEW.PROFILE_NAME FROM CAST(FLOOR(RANDOM() * LENGTH(NEW.PROFILE_NAME) + 1) AS INTEGER) FOR 1)) || 
 	    	CAST((RANDOM() * 9)::INTEGER AS TEXT);
 
         -- Provjeri jedinstvenost:
         SELECT COUNT(*) = 0
-		  INTO is_jedinstveno
+	    INTO is_jedinstveno
         FROM USER_LOGIN_PROFILES
         WHERE PROFILE_INITIALS = generirani_inicijali;
 
@@ -61,11 +61,11 @@ BEGIN
     -- Postavi generirane inicijale:
     NEW.PROFILE_INITIALS := generirani_inicijali;
 
-	-- Postavi inicijale korisnika koji je generirao slog:
-	NEW.CREATED_BY := generirani_inicijali;
+    -- Postavi inicijale korisnika koji je generirao slog:
+    NEW.CREATED_BY := generirani_inicijali;
 
-	-- Postavi datum kreiranja:
-	NEW.CREATION_DATE := CURRENT_TIMESTAMP;
+    -- Postavi datum kreiranja:
+    NEW.CREATION_DATE := CURRENT_TIMESTAMP;
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
@@ -84,9 +84,10 @@ EXECUTE FUNCTION generate_profile_initials();
 ------------------------------------------------------------------------
 -----------------------KOMENTARI----------------------------------------
 
---8.Komentari na polja tablice:
+--8. Opis tablice:
 COMMENT ON TABLE USER_LOGIN_PROFILES IS 'Tablica za pohranu podataka o korisničkim profilima za prijavu. Alias: ULP';
 
+--9. Komentari na polja tablice:
 COMMENT ON COLUMN USER_LOGIN_PROFILES.ID IS 'Sekvenca: user_login_profiles_seq';
 COMMENT ON COLUMN USER_LOGIN_PROFILES.PROFILE_NAME IS 'Naziv korisničkog profila (maksimalno 255 znakova)';
 COMMENT ON COLUMN USER_LOGIN_PROFILES.PROFILE_NUMBER IS 'Jedinstveni broj profila, obavezno polje';
