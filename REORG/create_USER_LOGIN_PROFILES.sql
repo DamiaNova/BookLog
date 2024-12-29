@@ -9,13 +9,13 @@ CREATE SEQUENCE user_login_profiles_seq
 -- 2. Kreiranje tablice USER_LOGIN_PROFILES:
 CREATE TABLE USER_LOGIN_PROFILES (
     	ID                NUMERIC(5,0) PRIMARY KEY DEFAULT nextval('user_login_profiles_seq'), -- Primarni ključ s automatskom sekvencom
-	PROFILE_NAME      VARCHAR(10) NOT NULL, 		--Polje za ime profila (maksimalno 10 znakova)
-    	PROFILE_NUMBER    NUMERIC(5,0) NOT NULL UNIQUE, 	--Jedinstveni broj profila, obavezno polje
-	PROFILE_INITIALS  VARCHAR(3)   NOT NULL UNIQUE, 	--Jedinstveni inicijali profila
-	CREATED_BY        VARCHAR(3)   NOT NULL, 		--Korisnik koji je kreirao profil
-	CREATION_DATE     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  --Datum kreiranja
-	CONSTRAINT id_max_check CHECK (ID <= 500), 		-- Ograničenje na maksimalan broj ID-a
-	CONSTRAINT profile_name_min_length CHECK (LENGTH(PROFILE_NAME) >= 5)
+	PROFILE_NAME      VARCHAR(10) NOT NULL, 			--Polje za ime profila (maksimalno 10 znakova)
+    	PROFILE_NUMBER    NUMERIC(5,0) NOT NULL UNIQUE, 		--Jedinstveni broj profila, obavezno polje
+	PROFILE_INITIALS  VARCHAR(3)   NOT NULL UNIQUE, 		--Jedinstveni inicijali profila
+	CREATED_BY        VARCHAR(3)   NOT NULL, 			--Korisnik koji je kreirao profil
+	CREATION_DATE     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  	--Datum kreiranja
+	CONSTRAINT id_max_check CHECK (ID <= 500), 			-- Ograničenje na maksimalan broj ID-a
+	CONSTRAINT profile_name_min CHECK (LENGTH(PROFILE_NAME) >= 5)   --Ograničenje na minimalan broj znakova u korisničkom imenu
 );
 
 -- 3. Provjera rezultata:
