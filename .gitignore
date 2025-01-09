@@ -8,3 +8,16 @@
 *.wsuo
 NET/BookLOG/obj/
 NET/BookLOG/bin/
+/NET/BookLog.DataAccess/obj/Debug/net8.0/BookLog.DataAccess.AssemblyInfo.cs
+/NET/BookLog.DataAccess/obj/Debug/net8.0/BookLog.DataAccess.AssemblyInfoInputs.cache
+/NET/BookLog.DataAccess/obj/Debug/net8.0/BookLog.DataAccess.dll
+/NET/BookLog.DataAccess/obj/Debug/net8.0/BookLog.DataAccess.pdb
+/NET/BookLog.DataAccess/obj/Debug/net8.0/refint/BookLog.DataAccess.dll
+/NET/BookLog.DataAccess/bin/Debug/net8.0/BookLog.DataAccess.dll
+/NET/BookLog.DataAccess/bin/Debug/net8.0/BookLog.DataAccess.pdb
+/NET/BookLog.DataAccess/obj/Debug/net8.0/ref/BookLog.DataAccess.dll
+/NET/BookLOG/bin/Debug/net8.0/BookLog.DataAccess.dll
+/NET/BookLOG/bin/Debug/net8.0/BookLog.DataAccess.pdb
+/NET/BookLOG/bin/Debug/net8.0/BookLOG.dll
+/NET/BookLOG/bin/Debug/net8.0/BookLOG.exe
+/NET/BookLOG/bin/Debug/net8.0/BookLOG.pdb
