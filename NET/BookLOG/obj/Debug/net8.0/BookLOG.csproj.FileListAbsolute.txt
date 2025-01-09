@@ -137,3 +137,5 @@ H:\DamiaNova\BookLog\NET\BookLOG\obj\Debug\net8.0\refint\BookLOG.dll
 H:\DamiaNova\BookLog\NET\BookLOG\obj\Debug\net8.0\BookLOG.pdb
 H:\DamiaNova\BookLog\NET\BookLOG\obj\Debug\net8.0\BookLOG.genruntimeconfig.cache
 H:\DamiaNova\BookLog\NET\BookLOG\obj\Debug\net8.0\ref\BookLOG.dll
+H:\DamiaNova\BookLog\NET\BookLOG\bin\Debug\net8.0\BookLog.DataAccess.dll
+H:\DamiaNova\BookLog\NET\BookLOG\bin\Debug\net8.0\BookLog.DataAccess.pdb

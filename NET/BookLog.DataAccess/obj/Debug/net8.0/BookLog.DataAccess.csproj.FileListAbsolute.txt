@@ -1,0 +1,13 @@
+H:\DamiaNova\BookLog\NET\BookLog.DataAccess\bin\Debug\net8.0\BookLog.DataAccess.deps.json
+H:\DamiaNova\BookLog\NET\BookLog.DataAccess\bin\Debug\net8.0\BookLog.DataAccess.dll
+H:\DamiaNova\BookLog\NET\BookLog.DataAccess\bin\Debug\net8.0\BookLog.DataAccess.pdb
+H:\DamiaNova\BookLog\NET\BookLog.DataAccess\obj\Debug\net8.0\BookLog.DataAccess.csproj.AssemblyReference.cache
+H:\DamiaNova\BookLog\NET\BookLog.DataAccess\obj\Debug\net8.0\BookLog.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+H:\DamiaNova\BookLog\NET\BookLog.DataAccess\obj\Debug\net8.0\BookLog.DataAccess.AssemblyInfoInputs.cache
+H:\DamiaNova\BookLog\NET\BookLog.DataAccess\obj\Debug\net8.0\BookLog.DataAccess.AssemblyInfo.cs
+H:\DamiaNova\BookLog\NET\BookLog.DataAccess\obj\Debug\net8.0\BookLog.DataAccess.csproj.CoreCompileInputs.cache
+H:\DamiaNova\BookLog\NET\BookLog.DataAccess\obj\Debug\net8.0\BookLog.DataAccess.sourcelink.json
+H:\DamiaNova\BookLog\NET\BookLog.DataAccess\obj\Debug\net8.0\BookLog.DataAccess.dll
+H:\DamiaNova\BookLog\NET\BookLog.DataAccess\obj\Debug\net8.0\refint\BookLog.DataAccess.dll
+H:\DamiaNova\BookLog\NET\BookLog.DataAccess\obj\Debug\net8.0\BookLog.DataAccess.pdb
+H:\DamiaNova\BookLog\NET\BookLog.DataAccess\obj\Debug\net8.0\ref\BookLog.DataAccess.dll
