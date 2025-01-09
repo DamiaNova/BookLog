@@ -6,8 +6,6 @@
 *.sqlite
 *.json
 *.wsuo
-NET/BookLOG/obj/
-NET/BookLOG/bin/
 /NET/BookLog.DataAccess/obj/Debug/net8.0/BookLog.DataAccess.AssemblyInfo.cs
 /NET/BookLog.DataAccess/obj/Debug/net8.0/BookLog.DataAccess.AssemblyInfoInputs.cache
 /NET/BookLog.DataAccess/obj/Debug/net8.0/BookLog.DataAccess.dll
@@ -20,4 +18,8 @@ NET/BookLOG/bin/
 /NET/BookLOG/bin/Debug/net8.0/BookLog.DataAccess.pdb
 /NET/BookLOG/bin/Debug/net8.0/BookLOG.dll
 /NET/BookLOG/bin/Debug/net8.0/BookLOG.exe
-/NET/BookLOG/bin/Debug/net8.0/BookLOG.pdb
+
+/NET/BookLOG/bin/
+/NET/BookLOG/obj/
+/NET/BookLog.DataAccess/bin/
+/NET/BookLog.DataAccess/obj/
