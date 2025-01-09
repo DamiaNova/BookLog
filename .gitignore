@@ -19,7 +19,8 @@
 /NET/BookLOG/bin/Debug/net8.0/BookLOG.dll
 /NET/BookLOG/bin/Debug/net8.0/BookLOG.exe
 
-/NET/BookLOG/bin/
+/NET/BookLOG/bin/Debug/net8.0/
 /NET/BookLOG/obj/
-/NET/BookLog.DataAccess/bin/
+/NET/BookLog.DataAccess/bin/Debug/net8.0/
 /NET/BookLog.DataAccess/obj/
+/NET/BookLog.DataAccess/obj/Debug/net8.0/BookLog.DataAccess.csproj.CoreCompileInputs.cache
