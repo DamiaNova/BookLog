@@ -6,5 +6,5 @@
 *.sqlite
 *.json
 *.wsuo
-bin/
-obj/
+NET/BookLOG/obj/
+NET/BookLOG/bin/
