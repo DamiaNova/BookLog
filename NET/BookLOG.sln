@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookLOG", "BookLOG\BookLOG.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookLog.DataAccess", "BookLog.DataAccess\BookLog.DataAccess.csproj", "{A4E086EF-DF57-461A-A6AC-86EDE2879DD2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookLog.Objects", "BookLog.Objects\BookLog.Objects.csproj", "{ED59027F-0C5A-4789-9D2C-6107D2D8EAE1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A4E086EF-DF57-461A-A6AC-86EDE2879DD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4E086EF-DF57-461A-A6AC-86EDE2879DD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4E086EF-DF57-461A-A6AC-86EDE2879DD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED59027F-0C5A-4789-9D2C-6107D2D8EAE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED59027F-0C5A-4789-9D2C-6107D2D8EAE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED59027F-0C5A-4789-9D2C-6107D2D8EAE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED59027F-0C5A-4789-9D2C-6107D2D8EAE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
