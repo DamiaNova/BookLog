@@ -3,6 +3,12 @@
 }
 
 <div class="login-container">
+    <div class="login-details">
+
+    </div>
+    <div class="login-details">
+        <img class="login-img" src="~/img/login-img.jpg" />
+     </div>
 </div>
 
 <style>
@@ -29,5 +35,31 @@
         justify-content: center; /* Centriranje sadržaja horizontalno */
         align-items: center;     /* Centriranje sadržaja vertikalno   */
         border-radius: 25px;     /* Dodavanje zaobljenih rubova       */
+    }
+
+    .login-details
+    {
+        flex: 1; /* Oznaka da se jednako dijeli prostor između svih child elemenata */
+        height: 100%;
+    }
+
+    /* Stilizacija DIV-a za unos LOGIN detalja (lijevo područje): */
+    .login-details:first-child
+    {
+        background-color:white;
+    }
+
+    /* Stilizacija DIV-a za LOGIN sliku (desno područje): */
+    .login-details:last-child
+    {
+        background-color:white;
+    }
+
+    .login-img
+    {
+        max-width: 100%; /* Osiguranje da slika ne premašuje širinu roditeljskog DIV elementa */
+        height: auto;    /* Visina slike će se automatski prilagoditi kako bi zadržala originalan omjer */
+        padding: 15px;
+        border-radius: 30px;
     }
 </style>
