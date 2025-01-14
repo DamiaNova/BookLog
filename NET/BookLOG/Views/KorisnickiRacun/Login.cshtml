@@ -1,3 +1,33 @@
 ﻿@{
     ViewData["Naslov"] = ViewNaslovi.Login;
 }
+
+<div class="login-container">
+</div>
+
+<style>
+    body
+    {
+        background-color: #deebcb;
+    }
+
+    .login-container {
+
+     /* Rad sa starijim preglednicima koji ne podržavaju flexbox: */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+     /* Postavljanje širine i visine u odnosu na BODY: */
+        width:60%;
+        height:80%;
+
+     /* Najmoderniji pristup: Flexbox layout model */
+        background-color:white;
+        display: flex;
+        justify-content: center; /* Centriranje sadržaja horizontalno */
+        align-items: center;     /* Centriranje sadržaja vertikalno   */
+        border-radius: 25px;     /* Dodavanje zaobljenih rubova       */
+    }
+</style>
