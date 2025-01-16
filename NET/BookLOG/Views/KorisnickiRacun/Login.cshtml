@@ -4,7 +4,10 @@
 
 <div class="login-container">
     <div class="login-details">
-
+        <div class="login-form">
+            <img class="login-img-logo" src="~/img/books-logo.jpg" />
+            <h2 class="sign-up">Prijava</h2>
+        </div>
     </div>
     <div class="login-details">
         <img class="login-img" src="~/img/login-img.jpg" />
@@ -17,7 +20,7 @@
         background-color: #deebcb;
     }
 
-    .login-container {
+    div.login-container {
 
      /* Rad sa starijim preglednicima koji ne podržavaju flexbox: */
         position: absolute;
@@ -32,30 +35,68 @@
      /* Najmoderniji pristup: Flexbox layout model */
         background-color:white;
         display: flex;
-        justify-content: center; /* Centriranje sadržaja horizontalno */
         align-items: center;     /* Centriranje sadržaja vertikalno   */
+        justify-content: center; /* Centriranje sadržaja horizontalno */
         border-radius: 25px;     /* Dodavanje zaobljenih rubova       */
     }
 
-    .login-details
+    div.login-details
     {
         flex: 1; /* Oznaka da se jednako dijeli prostor između svih child elemenata */
         height: 100%;
     }
 
     /* Stilizacija DIV-a za unos LOGIN detalja (lijevo područje): */
-    .login-details:first-child
+    div.login-details:first-child
     {
         background-color:white;
+
+        /* Centriranje svih child elemenata DIV-a uz pomoć flexboxa */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    div.login-form
+    {
+        width: 80%;
+        height: 80%;
+        border-radius: 30px;
+        background-color: white;
+
+        /* Centriranje child elemenata horizontalno na sredinu: */
+        display: flex;
+        align-items: center;
+        justify-content: normal;
+
+        /* Prikaz child elemenata jedan ispod drugog: */
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    img.login-img-logo
+    {
+        margin-top:30px;
+        height:50px;
+        width:50px;
+    }
+
+    h2.sign-up
+    {
+        font-family: Britannic;
+        font-weight: bold;
+        font-size: 300%;
+        line-height: 1.2;
+        color: #404040;
     }
 
     /* Stilizacija DIV-a za LOGIN sliku (desno područje): */
-    .login-details:last-child
+    div.login-details:last-child
     {
         background-color:white;
     }
 
-    .login-img
+    img.login-img
     {
         max-width: 100%; /* Osiguranje da slika ne premašuje širinu roditeljskog DIV elementa */
         height: auto;    /* Visina slike će se automatski prilagoditi kako bi zadržala originalan omjer */
