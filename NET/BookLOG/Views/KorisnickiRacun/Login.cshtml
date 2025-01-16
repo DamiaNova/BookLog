@@ -1,12 +1,12 @@
 ﻿@{
-    ViewData["Naslov"] = ViewNaslovi.Login;
+    ViewData[ViewResourcesHRV.Naslov] = ViewNaslovi.Login;
 }
 
 <div class="login-container">
     <div class="login-details">
         <div class="login-form">
-            <img class="login-img-logo" src="~/img/books-logo.jpg" />
-            <h2 class="sign-up">Prijava</h2>
+            <img class="login-img-logo" src="~/img/books-logo.jpg" alt=@ViewResourcesHRV.Login_LogoAltTekst title=@ViewResourcesHRV.Login_Dobrodosli />
+            <h2 class="sign-up">@ViewResourcesHRV.Login_Prijava</h2>
         </div>
     </div>
     <div class="login-details">
