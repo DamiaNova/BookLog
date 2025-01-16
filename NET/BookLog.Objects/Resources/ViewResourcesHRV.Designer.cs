@@ -61,11 +61,47 @@ namespace BookLog.Objects.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Logo tvrtke Apple.
+        /// </summary>
+        public static string Login_AppleLogo {
+            get {
+                return ResourceManager.GetString("Login_AppleLogo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Apple prijava.
+        /// </summary>
+        public static string Login_ApplePrijava {
+            get {
+                return ResourceManager.GetString("Login_ApplePrijava", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dobrodošli na BookLOG!.
         /// </summary>
         public static string Login_Dobrodosli {
             get {
                 return ResourceManager.GetString("Login_Dobrodosli", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logo tvrtke Google.
+        /// </summary>
+        public static string Login_GoogleLogo {
+            get {
+                return ResourceManager.GetString("Login_GoogleLogo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Google prijava.
+        /// </summary>
+        public static string Login_GooglePrijava {
+            get {
+                return ResourceManager.GetString("Login_GooglePrijava", resourceCulture);
             }
         }
         
@@ -84,6 +120,15 @@ namespace BookLog.Objects.Resources {
         public static string Login_Prijava {
             get {
                 return ResourceManager.GetString("Login_Prijava", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dobrodošli natrag na BookLOG - Nedostajali ste nam ❤.
+        /// </summary>
+        public static string Login_PrijaviteSe {
+            get {
+                return ResourceManager.GetString("Login_PrijaviteSe", resourceCulture);
             }
         }
         

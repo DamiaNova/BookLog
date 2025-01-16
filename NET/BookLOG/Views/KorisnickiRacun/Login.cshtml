@@ -7,6 +7,17 @@
         <div class="login-form">
             <img class="login-img-logo" src="~/img/books-logo.jpg" alt=@ViewResourcesHRV.Login_LogoAltTekst title=@ViewResourcesHRV.Login_Dobrodosli />
             <h2 class="sign-up">@ViewResourcesHRV.Login_Prijava</h2>
+            <label class="login-welcome">@ViewResourcesHRV.Login_PrijaviteSe</label>
+            <div class="login-other">
+                <button class="btn-other">
+                    <img class="other-logo" src="~/img/google-logo.png" alt=@ViewResourcesHRV.Login_GoogleLogo />
+                    @ViewResourcesHRV.Login_GooglePrijava
+                </button>
+                <button class="btn-other">
+                    <img class="other-logo" src="~/img/apple-logo.png" alt=@ViewResourcesHRV.Login_AppleLogo />
+                    @ViewResourcesHRV.Login_ApplePrijava
+                </button>
+            </div>
         </div>
     </div>
     <div class="login-details">
@@ -88,6 +99,51 @@
         font-size: 300%;
         line-height: 1.2;
         color: #404040;
+    }
+
+    label.login-welcome
+    {
+        font-family: Calibri;
+        font-size: 80%;
+        color: #404040;
+    }
+
+    div.login-other
+    {
+        width: 100%;
+        height: 8%;
+        background-color: white;
+
+        /* Element služi kao container za dvije slike koje se prikazuju jedna pored druge */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    button.btn-other
+    {
+        background-color:white;
+        border-radius: 15px;
+        border: 1px solid #404040;
+        font-family: Calibri;
+        font-size: 80%;
+        color: #404040;
+        width:40%;
+        height: 90%;
+
+        display:flex;
+        align-items:center;
+        justify-content: center;
+    }
+
+    img.other-logo
+    {
+        max-width:100%; /* Osiguranje da slika ne premašuje širinu roditeljskog DIV elementa */
+        height: auto; /* Visina slike će se automatski prilagoditi kako bi zadržala originalan omjer */
+        width:10%;
+        padding-right:5px;
     }
 
     /* Stilizacija DIV-a za LOGIN sliku (desno područje): */

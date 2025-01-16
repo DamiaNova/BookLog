@@ -117,14 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Login_AppleLogo" xml:space="preserve">
+    <value>Logo tvrtke Apple</value>
+  </data>
+  <data name="Login_ApplePrijava" xml:space="preserve">
+    <value>Apple prijava</value>
+  </data>
   <data name="Login_Dobrodosli" xml:space="preserve">
     <value>Dobrodošli na BookLOG!</value>
+  </data>
+  <data name="Login_GoogleLogo" xml:space="preserve">
+    <value>Logo tvrtke Google</value>
+  </data>
+  <data name="Login_GooglePrijava" xml:space="preserve">
+    <value>Google prijava</value>
   </data>
   <data name="Login_LogoAltTekst" xml:space="preserve">
     <value>Logo prikazuje četiri knjige poslagane jedna na drugu</value>
   </data>
   <data name="Login_Prijava" xml:space="preserve">
     <value>Prijava</value>
+  </data>
+  <data name="Login_PrijaviteSe" xml:space="preserve">
+    <value>Dobrodošli natrag na BookLOG - Nedostajali ste nam ❤</value>
   </data>
   <data name="Naslov" xml:space="preserve">
     <value>Naslov</value>
