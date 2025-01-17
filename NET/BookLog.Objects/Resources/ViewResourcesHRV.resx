@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="KorisnickoIme" xml:space="preserve">
+    <value>Korisničko ime</value>
+  </data>
+  <data name="KorisnickoIme_Placeholder" xml:space="preserve">
+    <value>Unesite korisničko ime</value>
+  </data>
   <data name="Login_AppleLogo" xml:space="preserve">
     <value>Logo tvrtke Apple</value>
   </data>
@@ -132,16 +138,31 @@
   <data name="Login_GooglePrijava" xml:space="preserve">
     <value>Google prijava</value>
   </data>
+  <data name="Login_KorisnickoIme" xml:space="preserve">
+    <value>Područje za unos korisničkog imena</value>
+  </data>
   <data name="Login_LogoAltTekst" xml:space="preserve">
     <value>Logo prikazuje četiri knjige poslagane jedna na drugu</value>
   </data>
-  <data name="Login_Prijava" xml:space="preserve">
-    <value>Prijava</value>
+  <data name="Login_Lozinka" xml:space="preserve">
+    <value>Područje za unos lozinke</value>
   </data>
   <data name="Login_PrijaviteSe" xml:space="preserve">
     <value>Dobrodošli natrag na BookLOG - Nedostajali ste nam ❤</value>
   </data>
+  <data name="Login_SuglasnostPrivatnosti" xml:space="preserve">
+    <value>Slažem se s Pravilima privatnosti</value>
+  </data>
+  <data name="Lozinka" xml:space="preserve">
+    <value>Lozinka</value>
+  </data>
+  <data name="Lozinka_Placeholder" xml:space="preserve">
+    <value>Unesite lozinku</value>
+  </data>
   <data name="Naslov" xml:space="preserve">
     <value>Naslov</value>
+  </data>
+  <data name="Prijava" xml:space="preserve">
+    <value>Prijava</value>
   </data>
 </root>

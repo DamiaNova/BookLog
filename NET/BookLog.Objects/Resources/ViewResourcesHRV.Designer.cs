@@ -61,6 +61,24 @@ namespace BookLog.Objects.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Korisničko ime.
+        /// </summary>
+        public static string KorisnickoIme {
+            get {
+                return ResourceManager.GetString("KorisnickoIme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unesite korisničko ime.
+        /// </summary>
+        public static string KorisnickoIme_Placeholder {
+            get {
+                return ResourceManager.GetString("KorisnickoIme_Placeholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Logo tvrtke Apple.
         /// </summary>
         public static string Login_AppleLogo {
@@ -106,6 +124,15 @@ namespace BookLog.Objects.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Područje za unos korisničkog imena.
+        /// </summary>
+        public static string Login_KorisnickoIme {
+            get {
+                return ResourceManager.GetString("Login_KorisnickoIme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Logo prikazuje četiri knjige poslagane jedna na drugu.
         /// </summary>
         public static string Login_LogoAltTekst {
@@ -115,11 +142,11 @@ namespace BookLog.Objects.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Prijava.
+        ///   Looks up a localized string similar to Područje za unos lozinke.
         /// </summary>
-        public static string Login_Prijava {
+        public static string Login_Lozinka {
             get {
-                return ResourceManager.GetString("Login_Prijava", resourceCulture);
+                return ResourceManager.GetString("Login_Lozinka", resourceCulture);
             }
         }
         
@@ -133,11 +160,47 @@ namespace BookLog.Objects.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Slažem se s Pravilima privatnosti.
+        /// </summary>
+        public static string Login_SuglasnostPrivatnosti {
+            get {
+                return ResourceManager.GetString("Login_SuglasnostPrivatnosti", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lozinka.
+        /// </summary>
+        public static string Lozinka {
+            get {
+                return ResourceManager.GetString("Lozinka", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unesite lozinku.
+        /// </summary>
+        public static string Lozinka_Placeholder {
+            get {
+                return ResourceManager.GetString("Lozinka_Placeholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Naslov.
         /// </summary>
         public static string Naslov {
             get {
                 return ResourceManager.GetString("Naslov", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prijava.
+        /// </summary>
+        public static string Prijava {
+            get {
+                return ResourceManager.GetString("Prijava", resourceCulture);
             }
         }
     }

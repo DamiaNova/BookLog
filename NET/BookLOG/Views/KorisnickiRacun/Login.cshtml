@@ -5,18 +5,32 @@
 <div class="login-container">
     <div class="login-details">
         <div class="login-form">
-            <img class="login-img-logo" src="~/img/books-logo.jpg" alt=@ViewResourcesHRV.Login_LogoAltTekst title=@ViewResourcesHRV.Login_Dobrodosli />
-            <h2 class="sign-up">@ViewResourcesHRV.Login_Prijava</h2>
+            <img class="login-img-logo" src="~/img/books-logo.jpg" alt="@ViewResourcesHRV.Login_LogoAltTekst" title="@ViewResourcesHRV.Login_Dobrodosli" />
+            <h2 class="sign-up">@ViewResourcesHRV.Prijava</h2>
             <label class="login-welcome">@ViewResourcesHRV.Login_PrijaviteSe</label>
             <div class="login-other">
                 <button class="btn-other">
-                    <img class="other-logo" src="~/img/google-logo.png" alt=@ViewResourcesHRV.Login_GoogleLogo />
+                    <img class="other-logo" src="~/img/google-logo.png" alt="@ViewResourcesHRV.Login_GoogleLogo" />
                     @ViewResourcesHRV.Login_GooglePrijava
                 </button>
                 <button class="btn-other">
-                    <img class="other-logo" src="~/img/apple-logo.png" alt=@ViewResourcesHRV.Login_AppleLogo />
+                    <img class="other-logo" src="~/img/apple-logo.png" alt="@ViewResourcesHRV.Login_AppleLogo" />
                     @ViewResourcesHRV.Login_ApplePrijava
                 </button>
+            </div>
+            <div class="login-data">
+                <label class="login-data-label">
+                    @ViewResourcesHRV.KorisnickoIme
+                </label>
+                <input type="text" class="login-textbox" placeholder="@ViewResourcesHRV.KorisnickoIme_Placeholder"/>
+                <label class="login-data-label">
+                    @ViewResourcesHRV.Lozinka
+                </label>
+                <input type="text" class="login-textbox" placeholder="@ViewResourcesHRV.Lozinka_Placeholder"/>
+                <div class="login-politika">
+                    <input type="checkbox" id="chbSuglasnostPrivatnosti" class="politika-checkbox" />
+                    <label for="chbSuglasnostPrivatnosti" class="politika-textbox">@ViewResourcesHRV.Login_SuglasnostPrivatnosti</label>
+                </div>
             </div>
         </div>
     </div>
@@ -87,7 +101,7 @@
 
     img.login-img-logo
     {
-        margin-top:30px;
+        margin-top:0px;
         height:50px;
         width:50px;
     }
@@ -105,13 +119,14 @@
     {
         font-family: Calibri;
         font-size: 80%;
-        color: #404040;
+        color: #737373;
     }
 
     div.login-other
     {
         width: 100%;
         height: 8%;
+        margin-top:10px;
         background-color: white;
 
         /* Element služi kao container za dvije slike koje se prikazuju jedna pored druge */
@@ -125,13 +140,13 @@
     button.btn-other
     {
         background-color:white;
-        border-radius: 15px;
-        border: 1px solid #404040;
+        border-radius: 18px;
+        border: 1px solid #bdbdbd;
         font-family: Calibri;
-        font-size: 80%;
+        font-size: 100%;
         color: #404040;
         width:40%;
-        height: 90%;
+        height: 85%;
 
         display:flex;
         align-items:center;
@@ -144,6 +159,70 @@
         height: auto; /* Visina slike će se automatski prilagoditi kako bi zadržala originalan omjer */
         width:10%;
         padding-right:5px;
+    }
+
+    div.login-data
+    {
+        width:82%;
+        height:40%;
+        background-color:white;
+        margin-top:25px;
+
+        /* DIV služi kao container za elemente za unos podataka */
+        display: flex;
+        justify-content: normal;
+        align-items: normal;
+        flex-direction: column;
+        gap:10px;
+    }
+
+    label.login-data-label
+    {
+        font-family: Calibri;
+        font-size: 100%;
+        font-weight: bold;
+        color: #404040;
+        margin-top:10px;
+        width:100%;
+        height:10%;
+    }
+
+    input[type="text"].login-textbox {
+        height:20%;
+        width:100%;
+        border-radius: 18px;
+        border: 1px solid #bdbdbd;
+        font-family: Calibri;
+        font-size:90%;
+        margin-top:-5px;
+        padding:15px; /* Pomicanje mjesta odakle korisnik kreće unositi tekst unutar elementa */
+    }
+
+    input[type="text"].login-textbox:focus
+    {
+        outline:none;
+        background-color: #f0f8f5;
+    }
+
+    div.login-politika
+    {
+        width:100%;
+        height: 20px;
+        margin-top:5px;
+        background-color:white;
+
+        display:flex;
+        flex-direction:row;
+        justify-content: normal;
+        align-items: center;
+    }
+
+    label.politika-textbox
+    {
+        font-size:80%;
+        font-family: Calibri;
+        color: #737373;
+        padding-left:3px;
     }
 
     /* Stilizacija DIV-a za LOGIN sliku (desno područje): */
