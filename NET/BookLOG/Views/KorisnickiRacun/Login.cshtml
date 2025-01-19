@@ -5,7 +5,7 @@
 <div class="login-container">
     <div class="login-details">
         <div class="login-form">
-            <img class="login-img-logo" src="~/img/books-logo.jpg" alt="@ViewResourcesHRV.Login_LogoAltTekst" title="@ViewResourcesHRV.Login_Dobrodosli" />
+            <img class="login-img-logo" src="" alt="@ViewResourcesHRV.Login_LogoAltTekst" title="@ViewResourcesHRV.Login_Dobrodosli" />
             <h2 class="sign-up">@ViewResourcesHRV.Prijava</h2>
             <label class="login-welcome">@ViewResourcesHRV.Login_PrijaviteSe</label>
             <div class="login-other">
@@ -31,6 +31,11 @@
                     <input type="checkbox" id="chbSuglasnostPrivatnosti" class="politika-checkbox" />
                     <label for="chbSuglasnostPrivatnosti" class="politika-textbox">@ViewResourcesHRV.Login_SuglasnostPrivatnosti</label>
                 </div>
+            </div>
+            <div class="login-footer">
+                <button class="login-btn">
+                    @ViewResourcesHRV.Prijava
+                </button>
             </div>
         </div>
     </div>
@@ -69,6 +74,7 @@
     {
         flex: 1; /* Oznaka da se jednako dijeli prostor između svih child elemenata */
         height: 100%;
+        border-radius: 50px;
     }
 
     /* Stilizacija DIV-a za unos LOGIN detalja (lijevo područje): */
@@ -104,15 +110,26 @@
         margin-top:0px;
         height:50px;
         width:50px;
+        background-color:white;
+    }
+
+    img.login-img-logo[src=""]
+    {
+        visibility: hidden;
     }
 
     h2.sign-up
     {
         font-family: Britannic;
-        font-weight: bold;
-        font-size: 300%;
+        font-size: 280%;
         line-height: 1.2;
         color: #404040;
+        background-color: #deebcb;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        width:82%;
+        border-radius:20px;
+        text-align: center;
     }
 
     label.login-welcome
@@ -223,6 +240,32 @@
         font-family: Calibri;
         color: #737373;
         padding-left:3px;
+    }
+
+    div.login-footer
+    {
+        margin-top:-10px;
+        width:100%;
+        height:50px;
+        background-color:white;
+
+        display:flex;
+        justify-content: center;
+        align-items: normal;
+        flex-direction: row;
+    }
+
+    button.login-btn
+    {
+        height: 40px;
+        width: 150px;
+        color: #404040;
+        background-color: #deebcb;
+        border-radius: 18px;
+        border: 1px solid #bdbdbd;
+        font-family: Calibri;
+        font-weight: normal;
+        font-size: 100%;
     }
 
     /* Stilizacija DIV-a za LOGIN sliku (desno područje): */
