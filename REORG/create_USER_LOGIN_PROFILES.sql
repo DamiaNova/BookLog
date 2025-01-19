@@ -9,13 +9,14 @@ CREATE SEQUENCE user_login_profiles_seq
 -- 2. Kreiranje tablice USER_LOGIN_PROFILES:
 CREATE TABLE USER_LOGIN_PROFILES (
     ID                NUMERIC(5,0) PRIMARY KEY DEFAULT nextval('user_login_profiles_seq'), -- Primarni ključ s automatskom sekvencom
-    PROFILE_NAME      VARCHAR(10)  NOT NULL, 			    --Polje za ime profila (maksimalno 10 znakova)
-    PROFILE_PASSWORD  VARCHAR(7)   NOT NULL, 		            --Lozinka za profil, obavezno polje
-    PROFILE_INITIALS  VARCHAR(3)   NOT NULL UNIQUE, 	            --Jedinstveni inicijali profila
-    CREATED_BY        VARCHAR(3)   NOT NULL, 			    --Korisnik koji je kreirao profil
-    CREATION_DATE     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,          --Datum kreiranja
-    CONSTRAINT id_max_check CHECK (ID <= 500), 			    --Ograničenje na maksimalan broj ID-a
-    CONSTRAINT profile_name_min CHECK (LENGTH(PROFILE_NAME) >= 5)   --Ograničenje na minimalan broj znakova u korisničkom imenu
+    PROFILE_NAME      VARCHAR(10)  NOT NULL, 			    	  --Polje za ime profila (maksimalno 10 znakova)
+    PROFILE_PASSWORD  VARCHAR(12)  NOT NULL, 		            	  --Lozinka za profil, obavezno polje
+    PROFILE_INITIALS  VARCHAR(3)   NOT NULL UNIQUE, 	            	  --Jedinstveni inicijali profila
+    CREATED_BY        VARCHAR(3)   NOT NULL, 			    	  --Korisnik koji je kreirao profil
+    CREATION_DATE     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,          	  --Datum kreiranja
+    CONSTRAINT id_max_check CHECK (ID <= 500), 			    	  --Ograničenje na maksimalan broj ID-a
+    CONSTRAINT profile_name_min CHECK (LENGTH(PROFILE_NAME) >= 5),  	  --Ograničenje na minimalan broj znakova u korisničkom imenu
+    CONSTRAINT profile_password_min CHECK (LENGTH(PROFILE_PASSWORD) >= 5) --Ograničenje na minimalan broj znakova za lozinku profila
 );
 
 -- 3. Provjera rezultata:
@@ -91,7 +92,7 @@ COMMENT ON TABLE USER_LOGIN_PROFILES IS 'Tablica za pohranu podataka o korisnič
 --9. Komentari na polja tablice:
 COMMENT ON COLUMN USER_LOGIN_PROFILES.ID 		IS 'Sekvenca: user_login_profiles_seq';
 COMMENT ON COLUMN USER_LOGIN_PROFILES.PROFILE_NAME 	IS 'Naziv korisničkog profila (maksimalno 10 znakova)';
-COMMENT ON COLUMN USER_LOGIN_PROFILES.PROFILE_PASSWORD  IS 'Lozinka profila, obavezno polje';
+COMMENT ON COLUMN USER_LOGIN_PROFILES.PROFILE_PASSWORD  IS 'Lozinka profila (maksimalno 12, minimalno 5 znakova)';
 COMMENT ON COLUMN USER_LOGIN_PROFILES.PROFILE_INITIALS  IS 'Jedinstveni inicijali korisnika';
 COMMENT ON COLUMN USER_LOGIN_PROFILES.CREATED_BY 	IS 'Korisnik koji je kreirao profil';
 COMMENT ON COLUMN USER_LOGIN_PROFILES.CREATION_DATE 	IS 'Datum kreiranja';
