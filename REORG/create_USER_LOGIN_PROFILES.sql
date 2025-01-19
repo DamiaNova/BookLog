@@ -9,7 +9,7 @@ CREATE SEQUENCE user_login_profiles_seq
 -- 2. Kreiranje tablice USER_LOGIN_PROFILES:
 CREATE TABLE USER_LOGIN_PROFILES (
     ID                NUMERIC(5,0) PRIMARY KEY DEFAULT nextval('user_login_profiles_seq'), -- Primarni ključ s automatskom sekvencom
-    PROFILE_NAME      VARCHAR(10)  NOT NULL, 			    	  --Polje za ime profila (maksimalno 10 znakova)
+    PROFILE_NAME      VARCHAR(10)  NOT NULL UNIQUE, 			  --Polje za ime profila (maksimalno 10 znakova)
     PROFILE_PASSWORD  VARCHAR(12)  NOT NULL, 		            	  --Lozinka za profil, obavezno polje
     PROFILE_INITIALS  VARCHAR(3)   NOT NULL UNIQUE, 	            	  --Jedinstveni inicijali profila
     CREATED_BY        VARCHAR(3)   NOT NULL, 			    	  --Korisnik koji je kreirao profil
