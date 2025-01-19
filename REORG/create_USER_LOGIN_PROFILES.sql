@@ -8,13 +8,13 @@ CREATE SEQUENCE user_login_profiles_seq
 
 -- 2. Kreiranje tablice USER_LOGIN_PROFILES:
 CREATE TABLE USER_LOGIN_PROFILES (
-    	ID                NUMERIC(5,0) PRIMARY KEY DEFAULT nextval('user_login_profiles_seq'), -- Primarni ključ s automatskom sekvencom
-	PROFILE_NAME      VARCHAR(10) NOT NULL, 			--Polje za ime profila (maksimalno 10 znakova)
-    	PROFILE_NUMBER    NUMERIC(5,0) NOT NULL UNIQUE, 		--Jedinstveni broj profila, obavezno polje
-	PROFILE_INITIALS  VARCHAR(3)   NOT NULL UNIQUE, 		--Jedinstveni inicijali profila
-	CREATED_BY        VARCHAR(3)   NOT NULL, 			--Korisnik koji je kreirao profil
-	CREATION_DATE     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  	--Datum kreiranja
-	CONSTRAINT id_max_check CHECK (ID <= 500), 			-- Ograničenje na maksimalan broj ID-a
+    ID                NUMERIC(5,0) PRIMARY KEY DEFAULT nextval('user_login_profiles_seq'), -- Primarni ključ s automatskom sekvencom
+	PROFILE_NAME      VARCHAR(10)  NOT NULL, 			            --Polje za ime profila (maksimalno 10 znakova)
+    PROFILE_PASSWORD  VARCHAR(7,0) NOT NULL, 		                --Lozinka za profil, obavezno polje
+	PROFILE_INITIALS  VARCHAR(3)   NOT NULL UNIQUE, 	            --Jedinstveni inicijali profila
+	CREATED_BY        VARCHAR(3)   NOT NULL, 			            --Korisnik koji je kreirao profil
+	CREATION_DATE     TIMESTAMP DEFAULT CURRENT_TIMESTAMP,          --Datum kreiranja
+	CONSTRAINT id_max_check CHECK (ID <= 500), 			            -- Ograničenje na maksimalan broj ID-a
 	CONSTRAINT profile_name_min CHECK (LENGTH(PROFILE_NAME) >= 5)   --Ograničenje na minimalan broj znakova u korisničkom imenu
 );
 
@@ -91,7 +91,22 @@ COMMENT ON TABLE USER_LOGIN_PROFILES IS 'Tablica za pohranu podataka o korisnič
 --9. Komentari na polja tablice:
 COMMENT ON COLUMN USER_LOGIN_PROFILES.ID IS 'Sekvenca: user_login_profiles_seq';
 COMMENT ON COLUMN USER_LOGIN_PROFILES.PROFILE_NAME IS 'Naziv korisničkog profila (maksimalno 10 znakova)';
-COMMENT ON COLUMN USER_LOGIN_PROFILES.PROFILE_NUMBER IS 'Jedinstveni broj profila, obavezno polje';
+COMMENT ON COLUMN USER_LOGIN_PROFILES.PROFILE_PASSWORD IS 'Lozinka profila, obavezno polje';
 COMMENT ON COLUMN USER_LOGIN_PROFILES.PROFILE_INITIALS IS 'Jedinstveni inicijali korisnika';
 COMMENT ON COLUMN USER_LOGIN_PROFILES.CREATED_BY IS 'Korisnik koji je kreirao profil';
 COMMENT ON COLUMN USER_LOGIN_PROFILES.CREATION_DATE IS 'Datum kreiranja';
+
+-----------------------BRISANJE----------------------------------------
+--Naredbe za brisanje triggera:
+--DROP TRIGGER IF EXISTS trg_check_id ON USER_LOGIN_PROFILES;
+--DROP TRIGGER IF EXISTS trg_generate_profile_initials ON USER_LOGIN_PROFILES;
+
+--Naredbe za brisanje funkcija:
+--DROP FUNCTION IF EXISTS check_id_limit();
+--DROP FUNCTION IF EXISTS generate_profile_initials();
+
+--Naredba za brisanje tablice:
+--DROP TABLE IF EXISTS user_login_profiles;
+
+--Naredba za brisanje sekvence:
+--DROP SEQUENCE IF EXISTS user_login_profiles_seq;
