@@ -6,19 +6,17 @@ CREATE SEQUENCE process_log_seq
 	MAXVALUE 999999 --Maksimalna vrijednost ID-a
 	CACHE 1;        --Keširanje jedne vrijednosti
 
---2. Kreiranje tablice PROCESS_LOG (alias PCL):
+--2. Kreiranje tablice PROCESS_LOG (alias PRL):
 CREATE TABLE process_log
 (
-	ID                NUMBER(6,0)   PRIMARY KEY default nexval('process_log_seq'),--Primarni ključ sa sekvencom
-	PCD_ID            NUMBER(6,0),                                      --Veza na tablicu PROCESS_LOG_DETAILS
+	ID                NUMERIC(6,0)  PRIMARY KEY default nextval('process_log_seq'),--Primarni ključ sa sekvencom
 	PACKAGE_NAME      VARCHAR(100)  NOT NULL,                           --Naziv paketa
 	PROCEDURE_NAME    VARCHAR(100)  NOT NULL,                           --Naziv procedure ili funkcije
 	PROCESS_STATUS    VARCHAR(1)    NOT NULL,                           --Status poziva: E-Error, W-Warning, I-Information
 	PROCESS_MESSAGE   VARCHAR(500),                                     --Poruka poziva procesa
 	PROCESS_TIMESTAMP TIMESTAMP     NOT NULL default CURRENT_TIMESTAMP, --Vrijeme poziva
 	CREATED_BY        VARCHAR(3)    NOT NULL,                           --Inicijali korisnika koji je izvršio poziv
-	CONSTRAINT id_max_check CHECK(ID<=999999),
-	CONSTRAINT fk_pcd_id FOREIGN KEY (PCD_ID) REFERENCES process_log_details(ID)
+	CONSTRAINT id_max_check CHECK(ID<=999999)
 );
 
 --3. Provjera rezultata:
@@ -27,11 +25,11 @@ CREATE TABLE process_log
 -------------------------------------------------------------------------
 -----------------------FUNKCIJE------------------------------------------
 --4. Funkcija koja diže exception ako je ID veći od maksimuma:
-CREATE OR REPLACE FUNCTION f_check_id_limit()
+CREATE OR REPLACE FUNCTION f_check_id_limit_PRL()
 RETURNS TRIGGER AS $$
 BEGIN
 	if NEW.ID > 999999 then
-	  raise exception 'ID ne može biti veći od 999999'
+	  raise exception 'ID ne može biti veći od 999999';
 	end if;
 	return NEW;
 END;
@@ -41,7 +39,7 @@ $$ LANGUAGE plpgsql;
 --5. Trigger koji kontrolira vrijednost ID-a:
 CREATE TRIGGER trg_check_id
 BEFORE INSERT OR UPDATE ON process_log
-FOR EACH ROW EXECUTE FUNCTION f_check_id_limit();
+FOR EACH ROW EXECUTE FUNCTION f_check_id_limit_PRL();
 ------------------------------------------------------------------------
 -----------------------KOMENTARI----------------------------------------
 --6. Opis tablice:
@@ -49,7 +47,6 @@ COMMENT ON TABLE process_log IS 'Tablica za logiranje poziva procedura i funkcij
 
 --7. Komentari polja:
 COMMENT ON COLUMN process_log.id                IS 'Sekvenca: process_log_seq';
-COMMENT ON COLUMN process_log.pcd_id            IS 'Veza na tablicu PROCESS_LOG_DETAILS';
 COMMENT ON COLUMN process_log.package_name      IS 'Naziv paketa';
 COMMENT ON COLUMN process_log.procedure_name    IS 'Naziv procedure ili funkcije';
 COMMENT ON COLUMN process_log.process_status    IS 'Status poziva: E-Error, W-Warning, I-Information';
