@@ -60,7 +60,7 @@ COMMENT ON COLUMN process_log.created_by        IS 'Inicijali korisnika koji je 
 --DROP TRIGGER IF EXISTS trg_check_id ON process_log;
 
 --Naredba za brisanje funkcije:
---DROP FUNCTION IF EXISTS f_check_id_limit();
+--DROP FUNCTION IF EXISTS f_check_id_limit_PRL();
 
 --Naredba za brisanje tablice
 --DROP TABLE IF EXISTS process_log;
